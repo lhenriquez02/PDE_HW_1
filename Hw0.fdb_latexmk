@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1790106943.46455 "Hw0.tex" "Hw0.pdf" "Hw0" 1790106943.72936 0
+["pdflatex"] 1790125287.49723 "Hw0.tex" "Hw0.pdf" "Hw0" 1790125287.67951 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1775415801 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1775415801 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1775415801 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -16,9 +16,11 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1775415801 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1775415801 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1775415801 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1775415801 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1775415801 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1775415801 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1775415801 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1775415801 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1775415801 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1775415801 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1775415801 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
@@ -49,11 +51,14 @@
   "/usr/share/texmf-dist/tex/latex/physics/physics.sty" 1775415801 29610 a9597219b282d9c78b02393dcd7d4322 ""
   "/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty" 1775415801 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775415801 43569 fd570f2fa160877d211e859f687312ba ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1787461385 5385779 47c0c393a77fd4a098bacfd57d66b88a ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1787461343 2328196 29a18e9b8eee2b4f8eda8e7cbf05cfe1 ""
-  "Hw0.aux" 1790106943.70394 287 11d3803e700d7d40b4e6ba86af208950 "pdflatex"
-  "Hw0.tex" 1790106356.05874 3952 55c46d245031520db1cf0216606c02f5 ""
-  "finiteDifferenceQ1a.pdf" 1790106941.85292 27800 6b5e1693eade7398d7a356ec441a30a3 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1786855816 5385779 47c0c393a77fd4a098bacfd57d66b88a ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1786855797 2328190 49badfe49376351926549966aa19c773 ""
+  "Hw0.aux" 1790125287.65723 1052 675dbfbc1df935872381a10e8cb50f5a "pdflatex"
+  "Hw0.tex" 1790125285.79655 7079 4d070dc616b5d5d7c9317682803c6071 ""
+  "convergenceq1.pdf" 1790120997.57342 150852 b91318bd62cfbff0662dc9927a908f66 ""
+  "finiteDifferenceQ1a.pdf" 1790120997.02143 27112 059f865dfb9a9c288250eae189732064 ""
+  "secondDerivative.pdf" 1790124181.36953 27239 44cda9fe070c333a14bedb1d83715af2 ""
+  "secondDerivativeConvergence.pdf" 1790124182.78153 188468 ec2f1ab1239709a93d6fa2931293877b ""
   (generated)
   "Hw0.aux"
   "Hw0.log"

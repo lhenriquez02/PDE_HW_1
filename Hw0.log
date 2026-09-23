@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.23)  22 SEP 2026 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.15)  22 SEP 2026 19:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -147,7 +147,17 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box56
 \@float@everytoks=\toks26
 \@floatcapt=\box57
-) (./Hw0.aux)
+) (./Hw0.aux
+
+LaTeX Warning: Label `fig:finite-difference' multiply defined.
+
+
+LaTeX Warning: Label `fig:finite-difference' multiply defined.
+
+
+LaTeX Warning: Label `fig:finite-difference' multiply defined.
+
+)
 \openout1 = `Hw0.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -218,32 +228,58 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-<finiteDifferenceQ1a.pdf, id=1, 579.16376pt x 686.565pt>
+<finiteDifferenceQ1a.pdf, id=1, 678.535pt x 706.64pt>
 File: finiteDifferenceQ1a.pdf Graphic file (type pdf)
 <use finiteDifferenceQ1a.pdf>
 Package pdftex.def Info: finiteDifferenceQ1a.pdf  used on input line 30.
-(pdftex.def)             Requested size: 387.36606pt x 363.69962pt.
+(pdftex.def)             Requested size: 387.36948pt x 363.70262pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./finiteDifferenceQ1a.pdf>] [2] (./Hw0.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./finiteDifferenceQ1a.pdf>]
+<convergenceq1.pdf, id=56, 796.9775pt x 580.1675pt>
+File: convergenceq1.pdf Graphic file (type pdf)
+<use convergenceq1.pdf>
+Package pdftex.def Info: convergenceq1.pdf  used on input line 46.
+(pdftex.def)             Requested size: 387.36055pt x 363.7015pt.
+ [2 <./convergenceq1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 62--64
+
+ []
+
+<secondDerivative.pdf, id=101, 794.97pt x 584.1825pt>
+File: secondDerivative.pdf Graphic file (type pdf)
+<use secondDerivative.pdf>
+Package pdftex.def Info: secondDerivative.pdf  used on input line 79.
+(pdftex.def)             Requested size: 387.37953pt x 363.71367pt.
+[3]
+<secondDerivativeConvergence.pdf, id=107, 818.05624pt x 906.38625pt>
+File: secondDerivativeConvergence.pdf Graphic file (type pdf)
+<use secondDerivativeConvergence.pdf>
+Package pdftex.def Info: secondDerivativeConvergence.pdf  used on input line 88.
+(pdftex.def)             Requested size: 387.36995pt x 363.69598pt.
+ [4 <./secondDerivative.pdf>] [5 <./secondDerivativeConvergence.pdf>] [6] (./Hw0.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 3307 strings out of 469515
- 47612 string characters out of 5470807
- 463312 words of memory out of 5000000
- 31951 multiletter control sequences out of 15000+600000
+ 3332 strings out of 469515
+ 48422 string characters out of 5470807
+ 462351 words of memory out of 5000000
+ 31976 multiletter control sequences out of 15000+600000
  631785 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 73i,6n,79p,563b,321s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Hw0.pdf (2 pages, 118163 bytes).
+ 73i,9n,79p,668b,321s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Hw0.pdf (6 pages, 489866 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 235 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

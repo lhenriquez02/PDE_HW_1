@@ -40,13 +40,58 @@ on the interval $0 \leq x \leq 2\pi$. Use second-order centered differences on i
     \item Show a relative error convergence plot by plotting the relative error on the y-axis and the grid size $N$ on the x-axis. Measure relative error as
     $$Err = \frac{\Vert f'(x) - f'_n(x) \Vert_p}{\Vert f'(x) \Vert_p}.$$
     \noindent Plot the error using both the $p=\infty,2$ norms in a log-log scale. The relative errors should be lines with slopes 1 and 3/2 respectively, i.e. it scales with $\displaystyle \frac{1}{N}, \frac{1}{N^{3/2}}$. Extra Credit: The $3/2$ slope is strange, why is that happening?
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.80\textwidth, height = 0.55\textheight]{convergenceq1.pdf}
+    \caption{Comparison of the exact derivative of
+    $f(x)=e^{\sin x}$ with the finite difference approximation.}
+    \label{fig:finite-difference}
+\end{figure}
+
+As expected, the error decreases with increasing N. In particular, $Err$ scales with $1/N$ with $L^{\infty}$ norm and $1/N^{3/2}$ with the standard euclidean norm. The $L^{\infty}$ norm is equivalent to taking the maximum of the components, so it makes sense that the error scales with $1/N$, as the largest component in this case is the largest error, i.e, the first order error found at the endpoints. Interestingly, we should expect the $L^{2}$ norm to grant an error that scales with $1/N^{2}$, since $f_{n}$ is a second order approximation. However, it is trivial to show that the error's numerator term is dominated by the endpoints:
+\begin{align*}
+  O(\lVert f'(x)\rVert_{2}) = \sqrt{\sum O(1)^{2}} = O(\sqrt{N}) \\
+  O(\lVert f'(x)-f_{n}'(x)\rVert_{2}) = \sqrt{2O(1/N)^{2}+\sum O(1/N^{2})^{2}} = O(1/N)
+\end{align*}
+from which we can write $O(Err) = O(1/N^{\frac{3}{2}})$. Hence, the first order approximation at the endpoints ultimately determines how the error scales with grid size.
 \end{enumerate}
 
 \vspace{0.5cm}
 
 \noindent \textbf{Problem 2: Second-order derivatives}
-Repeat problem 1 but compute the second derivative $f''(x)$. Assume periodicity and wrap around the grid instead of using one-sided finite differences.
+Repeat problem 1 but compute the second derivative $f''(x)$. Assume periodicity and wrap around the grid instead of using one-sided finite differences. \\
 
+For this problem we find the second derivative of the function analytically:
+\[
+  f''(x) = e^{\sin x}(\cos^{2}x-\sin x)
+\]
+
+and we use the second order centered approximation:
+\[
+  f''(x_i) \sim \frac{f_{i+1}-2f_{i}+f_{i-1}}{\Delta x^{2}}
+\]
+
+We discretize the grid into 100 points, and take advantage of the periodicity of $f$ to avoid relying on first order one-sided differences at the end points. We utilize the circshift function in matlab to realize this.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.80\textwidth, height = 0.55\textheight]{secondDerivative.pdf}
+    \caption{Comparison of the exact derivative of
+    $f(x)=e^{\sin x}$ with the finite difference approximation.}
+    \label{fig:finite-difference}
+\end{figure}
+
+In this case, we see that the second ordered centered difference method does a good job of approximating the second derivative of $f$, and we proceed to graph the error under the $L^{2}$ and $L^{\infty}$ norms. Since we are not using first order approximations anywhere, we expect to not see drastic differences in the slopes of the errors in log log plot as in the previous question.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.80\textwidth, height = 0.55\textheight]{secondDerivativeConvergence.pdf}
+    \caption{Comparison of the exact derivative of
+    $f(x)=e^{\sin x}$ with the finite difference approximation.}
+    \label{fig:finite-difference}
+\end{figure}
+
+As expected, the two lines are effectively parallel. In particular, line has slope $-2$, and so the error scales with $1/N^{2}$. Since we do not have any first order approximations, the maximum of the errors for each N is not dominated by the first order approximations, and neither is the numerator of the $L^{2}$ norm. Hence, we have what we expect, error of order $\Delta x^{2}$, or of the order $1/N^{2}$
 \vspace{0.5cm}
 
 \noindent \textbf{Problem 3: ODE}

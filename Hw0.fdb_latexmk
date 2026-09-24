@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1790220217.26907 "Hw0.tex" "Hw0.pdf" "Hw0" 1790220217.45186 0
+["pdflatex"] 1790220841.36439 "Hw0.tex" "Hw0.pdf" "Hw0" 1790220841.55913 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1775415801 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1775415801 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1775415801 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -54,8 +54,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775415801 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1786855816 5385779 47c0c393a77fd4a098bacfd57d66b88a ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1786855797 2328190 49badfe49376351926549966aa19c773 ""
-  "Hw0.aux" 1790220217.42836 1235 00ee09682dd9fefbfbd1780d570293c8 "pdflatex"
-  "Hw0.tex" 1790219725.95912 9635 5ea3e90ff17b4333be0f89ced0b3e1bc ""
+  "Hw0.aux" 1790220841.53511 1235 9932e55e982637e6af36aa0f4a0a0c2a "pdflatex"
+  "Hw0.tex" 1790220839.70675 10062 bf4ade221710ed35b057249a9ba3a57b ""
   "convergencePlot.pdf" 1790219135.16437 105060 c31cda5ef0a7b3bdb981b87d179f5662 ""
   "convergenceq1.pdf" 1790220175.62115 150852 4f6ca2cdd11cf4cb4b2de64fa6455a18 ""
   "finiteDifferenceQ1a.pdf" 1790220174.82416 27112 3476e8a6d9504441ce1aae78437f9771 ""

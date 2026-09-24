@@ -69,7 +69,7 @@ title('Second Derivative of $f(x)=e^{\sin(x)}$', ...
     'FontSize', fs);
 
 legend( ...
-    'Location', 'northeast', ...
+    'Location', 'southeast', ...
     'Interpreter', 'latex', ...
     'FontSize', 0.75*fs);
 
@@ -100,17 +100,10 @@ for k = 1:length(Ns)
     x = a + (0:N-1)*dx;
     f = exp(sin(x));
     d2f = exp(sin(x)).*(cos(x).^2 - sin(x));
-
-    % Periodic second-order centered difference
     d2f_approx = (circshift(f,-1) - 2*f + circshift(f,1))/dx^2;
 
-    % Error
     e = d2f - d2f_approx;
-
-    % Relative infinity-norm error
     errInf(k) = norm(e, inf)/norm(d2f, inf);
-
-    % Relative L2 error
     errL2(k) = norm(e, 2)/norm(d2f, 2);
 
 end

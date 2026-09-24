@@ -44,8 +44,7 @@ on the interval $0 \leq x \leq 2\pi$. Use second-order centered differences on i
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.80\textwidth, height = 0.55\textheight]{convergenceq1.pdf}
-    \caption{Comparison of the exact derivative of
-    $f(x)=e^{\sin x}$ with the finite difference approximation.}
+    \caption{$L^{\infty}$ and $L^{2}$ error log-log plot}
     \label{fig:finite-difference}
 \end{figure}
 
@@ -77,7 +76,7 @@ We discretize the grid into 100 points, and take advantage of the periodicity of
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.80\textwidth, height = 0.55\textheight]{secondDerivative.pdf}
-    \caption{Comparison of the exact derivative of
+    \caption{Comparison of the exact second derivative of
     $f(x)=e^{\sin x}$ with the finite difference approximation.}
     \label{fig:finite-difference}
 \end{figure}
@@ -86,8 +85,7 @@ In this case, we see that the second ordered centered difference method does a g
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.80\textwidth, height = 0.55\textheight]{secondDerivativeConvergence.pdf}
-    \caption{Comparison of the exact derivative of
-    $f(x)=e^{\sin x}$ with the finite difference approximation.}
+    \caption{$L^{2}$ and $L^{\infty}$ error log-log plots for approximate soluton of second derivative}
     \label{fig:finite-difference}
 \end{figure}
 
@@ -98,6 +96,95 @@ As expected, the two lines are effectively parallel. In particular, line has slo
 Consider the ODE
 $$\dv[2]{u}{x} + \sin(x) \dv{u}{x} + u(x) = f(x)$$
 defined on $0 \leq x \leq 5$. Solve the ODE using second-order finite difference methods with the Dirichlet conditions. Use $u(x) = \sin(x)$ to test your solution by finding boundary conditions and the necessary forcing function $f(x)$. Show an error plot that proves your method converges with second order.
+
+We use centered second order differences to approximate $u''$ and $u'$, after discretizing the domain so that $h = 5/N$, $x_{i} = ih$ for $i = 0,\dots, N$, and letting $U_{i} \sim u_{x_{i}}$:
+\[
+  u''(x_{i}) \sim \frac{U_{i+1}-2U_{i}+U_{i-1}}{h^{2}}
+\]
+
+and
+
+\[
+  u'(x_{i})\sim \frac{U_{i+1}-U_{i-1}}{2h}
+\]
+Substituting into the ODE:
+
+\begin{align*}
+  \frac{U_{i+1}-2U_{i}+U_{i-1}}{h^{2}}+\sin x_{i}\frac{U_{i+1}-U_{i-1}}{2h}+U_{i} = f(x_{i}) \\
+  (\frac{1}{h^{2}}-\frac{sin x_{i}}{2h})U_{i-1}+(1-\frac{2}{h^{2}})U_{i}+(\frac{1}{h^{2}}+\frac{sin x_{i}}{2h})U_{i+1} = f(x_{i})
+\end{align*}
+Letting $a_{i}.b_{i},c_{i}$ be the coefficients for $U_{i-1},U_{i},U_{i+1}$, respectively, implies the following relation:
+\[
+  a_{i}U_{i-1}+b_{i}U_{i}+c_{i}U_{i+1} = f(x_{i})
+\]
+for $i = 1, \dots N-1$, which implies the following system:
+\[
+\begin{bmatrix}
+b_1 & c_1 & 0 & \cdots & 0 \\
+a_2 & b_2 & c_2 & \ddots & \vdots \\
+0 & a_3 & b_3 & \ddots & 0 \\
+\vdots & \ddots & \ddots & \ddots & c_{N-2} \\
+0 & \cdots & 0 & a_{N-1} & b_{N-1}
+\end{bmatrix}
+\begin{bmatrix}
+U_1 \\
+U_2 \\
+U_3 \\
+\vdots \\
+U_{N-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+f_1 - a_{1}u(0) \\
+f_2 \\
+f_3 \\
+\vdots \\
+f_{N-1} - c_{N-1}u(5)
+\end{bmatrix}.
+\]
+
+The solution to this system gives us an approximate solution to the ODE with second order error.
+
+We now impose the dirichlet conditions. Assuming, $u(x)=\sin x$ and substituting into the ODE,
+\[
+  -\sin x +\sin x\cos x +\sin x =f(x)
+\]
+
+which implies $f(x) = \sin x \cos x$. We also have $U(0) = \sin 0 = 0$, and $U(5) = \sin 5$. So we get:
+
+\[
+\begin{bmatrix}
+b_1 & c_1 & 0 & \cdots & 0 \\
+a_2 & b_2 & c_2 & \ddots & \vdots \\
+0 & a_3 & b_3 & \ddots & 0 \\
+\vdots & \ddots & \ddots & \ddots & c_{N-2} \\
+0 & \cdots & 0 & a_{N-1} & b_{N-1}
+\end{bmatrix}
+\begin{bmatrix}
+U_1 \\
+U_2 \\
+U_3 \\
+\vdots \\
+U_{N-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sin x_{1}\cos x_{1} \\
+\sin x_{2}\cos x_{2} \\
+\sin x_{3}\cos x_{3} \\
+\vdots \\
+\sin x_{N-1}\cos x_{{N-1}} - c_{N-1}\sin 5
+\end{bmatrix}.
+\]
+Solving the system numerically, we plot the $L^{\infty}$ error:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.80\textwidth, height = 0.55\textheight]{convergencePlot.pdf}
+    \caption{Finite difference error plotted alongside $O(\Delta x^{2}$) with log-log scale}
+    \label{fig:finite-difference}
+\end{figure}
+After computing the $L^{\infty}$ error of our approximate solution to the ODE, we see that as $N$ grows large, $\Delta x$ approaches 0, and the error scales with $1/N^{2}$, or $\Delta x^{2}$. It is parallel to a line of order $\Delta ^{2}$. This proves the method converges with second order.
 
 \vspace{0.5cm}
 \noindent \textbf{Problem 4: Poisson Equation}

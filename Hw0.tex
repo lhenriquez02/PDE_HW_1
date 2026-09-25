@@ -176,7 +176,15 @@ U_{N-1}
 \sin x_{N-1}\cos x_{{N-1}} - c_{N-1}\sin 5
 \end{bmatrix}.
 \]
-Solving the system numerically, we plot the $L^{\infty}$ error:
+Solving the system numerically:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.80\textwidth, height = 0.55\textheight]{sinxConvergenceplot.pdf}
+    \caption{Exact vs Finite Difference Solution to Problem 3}
+    \label{fig:finite-difference}
+  \end{figure}
+
+The approximate solution matches the exact solution. We now plot the $L^{\infty}$ error:
 
 \begin{figure}[H]
     \centering
@@ -194,6 +202,45 @@ Use finite difference methods to solve the Poisson equation $\nabla^2 u = f(x,y)
     \item Apply Dirichlet conditions on all boundaries so that $u(x,y)$ satisfies the PDE and the boundary conditions, and show a plot of your solution and a second order convergence plot (similar to the first three problems).
     \item Modify your code to apply Neumann conditions on all boundaries. \textbf{This won't work.} Why not? -- both in terms of the linear algebra and in terms of the actual PDE we want to solve. Suggest a solution to the issue.
 \end{enumerate}
+
+We begin by finding the forcing function $f(x,y)$ given $u = \sin x \cos y$. Differentiating twice with respect to $x,y$ yields:
+
+\begin{align*}
+  u_{xx} = -\sin x \cos y \\
+  u_{yy} = -\sin x\cos y
+\end{align*}
+And so we get that $\nabla ^{2} u = f(x,y) = -2\sin x\cos y$. We can also determine the dirichlet boundary conditions:
+\begin{align*}
+u(0,y) = \sin 0 \cos y = 0 \\
+u(5,y) = \sin 5 \cos y \
+u(x,0) = \sin x \\
+u(x,5) = \sin x \cos 5
+\end{align*}
+
+We proceed to discretize the domain into $(N+1)^{2}$ using a type 1 grid, so $x_{i} = ih$, and $y_{j} = jh$ where we have $h = 5/N$, and $i,j = 0, \dots , N$. Using the second-order center difference approximation for both directions, we get the five-point laplacian:
+\[
+  \nabla u^{2} \sim \frac{u_{i+1,j}+u_{i-1,j}+u_{i.j+1}+u_{i,j-1}-4u_{i,j}}{h^{2}} = -2\sin x_{i} \cos y_{i}
+\]
+We want to solve the linear system $Lu = f$, where $L = I\otimes D + D\otimes I$, where D is simply $D = \frac{1}{h^{2}}tridiag(1,-2,1$. Solving in Matlab generates the following plot:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{poisson_solution.pdf}
+    \caption{Exact and finite difference solutions to the Poisson equation.}
+    \label{fig:poisson_solution}
+\end{figure}
+
+From inspection, the approximate solution shows remarkable similarity to the actual solution. We now rigorously characterize the error by producing a log log plot of it:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{poisson_convergence.pdf}
+    \caption{Finite difference solution error plot comparison with $O(h^{2})$ error}
+    \label{fig:poisson_solution}
+\end{figure}
+As expected, the error for the problem scales with $O(h^{2)}$, in other words, with $1/N^{2}$.
+
+If we modify the code to apply Neumann conditions on all boundaries, the Poisson equation does not have a unique solution. Simply adding any given solution by any constant is also a solution to the Poisson equation. This has a linear algebra consequence too if one considers the system we originally set out to solve, $Lu =f$. One notes that applying a vector where each component is the same constant yields $Lc = 0$, where $c$ is the vector such that $c_{i} = c$. Therefore, the kernel of $L$ is non-trivial, which by the invertible matrix theorem implies $L$ is not invertible. Therefore, matlab cannot uniquely solve for $u$. One possible solution is to additionally state that $u(0,0) = 0$. Then, we getthat $u$ must be unique.
 
 \vspace{0.5cm}
 \noindent \textbf{AI Statement}
